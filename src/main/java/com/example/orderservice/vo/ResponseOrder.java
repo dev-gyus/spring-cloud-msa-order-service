@@ -17,5 +17,5 @@ public class ResponseOrder {
     private Integer unitPrice;
     private Integer totalPrice;
     private LocalDateTime createdAt;
-    private String orderId;
+    private String userId;
 }
