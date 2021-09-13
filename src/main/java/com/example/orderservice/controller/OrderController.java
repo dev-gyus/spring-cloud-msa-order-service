@@ -50,7 +50,7 @@ public class OrderController {
         Iterable<OrderEntity> orderEntities = orderService.getOrdersByUserId(userId);
         List<ResponseOrder> responseOrders = new ArrayList<>();
         orderEntities.forEach(entity -> responseOrders.add(modelMapper.map(entity, ResponseOrder.class)));
-//
+
         return new ResponseEntity<>(responseOrders, HttpStatus.CREATED);
     }
 }
