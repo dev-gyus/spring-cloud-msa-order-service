@@ -54,7 +54,7 @@ public class OrderController {
 
 
         /* send this order to the kafka */
-//        kafkaProducer.send("example-catalog-topic", orderDto);
+        kafkaProducer.send("example-catalog-topic", orderDto);
 //        orderProducer.send("orders", orderDto);
 
 //        ResponseOrder responseOrder = modelMapper.map(orderDto, ResponseOrder.class);
@@ -73,12 +73,12 @@ public class OrderController {
         List<ResponseOrder> responseOrders = new ArrayList<>();
         orderEntities.forEach(entity -> responseOrders.add(modelMapper.map(entity, ResponseOrder.class)));
 
-        try{
-            Thread.sleep(1000);
-            throw new Exception("장애 발생");
-        }catch (InterruptedException e){
-            log.warn(e.getMessage());
-        }
+//        try{
+//            Thread.sleep(1000);
+//            throw new Exception("장애 발생");
+//        }catch (InterruptedException e){
+//            log.warn(e.getMessage());
+//        }
 
         log.info("After retrieved orders data");
 
