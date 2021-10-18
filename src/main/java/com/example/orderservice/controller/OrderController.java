@@ -57,8 +57,7 @@ public class OrderController {
         kafkaProducer.send("example-catalog-topic", orderDto);
 //        orderProducer.send("orders", orderDto);
 
-//        ResponseOrder responseOrder = modelMapper.map(orderDto, ResponseOrder.class);
-
+//        ResponseOrder //
         log.info("After added orders data");
         return new ResponseEntity<>(responseOrder, HttpStatus.CREATED);
     }
