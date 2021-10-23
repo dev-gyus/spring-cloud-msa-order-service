@@ -51,7 +51,7 @@ public class OrderController {
         /* Kafka */
 //        orderDto.setOrderId(UUID.randomUUID().toString());
 //        orderDto.setTotalPrice(requestOrder.getQty() * requestOrder.getUnitPrice());
-//
+
 
         /* send this order to the kafka */
         kafkaProducer.send("example-catalog-topic", orderDto);
